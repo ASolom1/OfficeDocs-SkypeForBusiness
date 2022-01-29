@@ -67,13 +67,17 @@ To avoid a confusing or regressed Skype for Business experience, the Skype for B
 Phone System isn't supported in Teams in **Islands** mode. **Islands** mode doesn't support Enterprise Voice client is Skype for Business.
 
 > [!Important]
-> In **Islands** mode, all messages and calls from federated users (people outside your organization) are delivered to Skype for Business. After upgrading to **Teams Only** mode, all messages and calls from outside your organization are delivered to Teams.
+> In **Islands** mode, all calls from federated users (people outside your organization) are delivered to Skype for Business. After upgrading to **Teams Only** mode, all calls from outside your organization are delivered to Teams.
+
+> [!Important]
+In **Islands** mode, all messages from federated users (people outside your organization) are delivered to Teams. Please note that chat messages received prior to January 2022 on Skype for Business will remain on Skype for Business.
+> 
 
 ### Teams Only
 
 A **Teams Only** user (also called an *upgraded* user) has access to all the capabilities in Teams. They may retain the Skype for Business client to join meetings on Skype for Business that have been organized by non-upgraded users or external parties. An upgraded user can continue to communicate with other users in the organization who are still using Skype for Business by using the interoperability capabilities between Teams and Skype for Business (provided the Skype for Business users are not in **Islands** mode). However, an upgraded user can't initiate a Skype for Business chat, call, or meeting.
 
-As soon as your organization is ready for some or all users to use Teams as their only communications and collaboration tool, upgrade those users to **Teams Only** mode. If you're upgrading from **Islands** mode, we advise that you first saturate Teams adoption throughout your organization before beginning the upgrade process. This adoption avoids broken communication scenarios due to **Islands** mode not providing interoperability.
+As soon as your organization is ready for some or all users to use Teams as their only communications and collaboration tool, upgrade those users to **Teams Only** mode. If you're upgrading from **Islands** mode, we advise that you first saturate Teams adoption throughout your organization before beginning the upgrade process. This adoption avoids broken communication scenarios due to **Islands** mode not providing interoperability. Note that when users are upgraded to **Teams Only** mode we provide a link within the existing chat pane to ensure that both parties can continue their chat in Teams.
 
 When in **Teams Only** mode, Teams is the default app for the SIP/Tel protocol. Links in a user's contact card in Outlook for calling or chat will be handled by Teams.
 
@@ -126,7 +130,7 @@ For more information about coexistence modes, prerequisites, and management, see
 
 Interoperability is the ability for Teams and Skype for Business users in the same organization to communicate across Teams and Skype for Business.
 
-Interoperability is governed by the coexistence mode (also known as upgrade mode) of the receiver. There is no interoperability when the receiver is in **Islands** mode.
+Interoperability is governed by the coexistence mode (also known as upgrade mode) of the receiver. 
 
 > [!Note]
 > When deployed in any coexistence mode except **Islands**, Teams and Skype for Business can [interoperate](#interoperability-of-teams-and-skype-for-business), enabling users to chat with and call one another, and ensuring that communications remain fluid across your organization during your upgrade journey to Teams. Coexistence modes govern interoperability. The coexistence mode of the receiver determines whether interoperability will be available. For example, if the receiver is in a mode in which chat is only available in one client (say, Teams), chat interoperability will generally be available in case the initiator uses the other client (in this case, Skype for Business) to start the chat. On the other hand, if the receiver is in the mode in which chat is available in both clients (Islands mode), interoperability won't be available for the chat. The message will be received by the receiver in the same client in which the initiator started the chat. Therefore, proper communication in **Islands** mode requires Teams adoption saturation; that is, all users actively using and monitoring both clients.
@@ -255,7 +259,13 @@ When organizing meetings, the meeting type that gets scheduled is based on the m
 
 As described above in [Interoperability of Teams and Skype for Business](#interoperability-of-teams-and-skype-for-business), Teams supports interop with Skype for Business in certain scenarios. Interop communication refers to a chat or call between a Skype for Business user and a Teams user.  Interop communication is only possible between two users; multi-party chat/calling or adding additional users is not supported.
 
-An interop chat or call between two users is created when each of the following are true:
+An interop chat between two users is created when each of the following are true:
+
+- One user is using Teams and the other is using Skype for Business AND does not have access to Teams.
+
+- The mode of the recipient of the initial communication is NOT Islands (otherwise the communication would land in the same client) if both users are in the same organization. In federated scenarios, the sending user is using Teams, and the recipient is in Skype for Business mode. 
+
+An interop call between two users is created when each of the following are true:
 
 - One user is using Teams and the other is using Skype for Business.
 
