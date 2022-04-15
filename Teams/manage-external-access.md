@@ -266,6 +266,12 @@ If you're an administrator, you can use the following diagnostic tool to validat
 
 3. The tests will return the best next steps to address any tenant or policy configurations that are preventing communication with the federated user.
 
+## User-Level Controls
+While admins control each user's ability to leverage external access, users are also able to control their experience with external access. 
+1. Invitation Flow - when a user receives a 1:1 chat from an external user they are presented with a full-screen banner. From this banner, the user can **Preview** the messages, **Accept** communications, or **Block** the external user.
+2. Block - when a user Blocks an external user they revoke their presence information and the ability for the external user to send 1:1 messages or group chat invitations.
+
+<img width="1920" alt="2  User Accepts Request" src="https://user-images.githubusercontent.com/98335128/163577677-8f6a76c0-eee2-48e1-b9b5-38cf4ca6595f.png">
 
 ## Related topics
 
